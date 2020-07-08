@@ -1,10 +1,21 @@
 import React, { Component } from "react";
 import "./App.css";
+// import Modal from "./components/modal.js"
+
 
 import SpotifyWebApi from "spotify-web-api-js";
 const spotifyApi = new SpotifyWebApi();
 
 class App extends Component {
+  // state = { show: false };
+
+  // showModal = () => {
+  //   this.setState({ show: true });
+  // };
+
+  // hideModal = () => {
+  //   this.setState({ show: false });
+  // };
   constructor() {
     super();
     const params = this.getHashParams();
@@ -41,9 +52,6 @@ class App extends Component {
       });
     });
   }
-  showModal() {
-    this.showModal.style.display = "block"
-  }
 
   render() {
     return (
@@ -64,20 +72,18 @@ class App extends Component {
         <p>currently playing:</p> <br />
           <h2 className="title">{this.state.nowPlaying.name}</h2>
         </div>
+        {/* <Modal show={this.state.show} handleClose={this.hideModal}>
+          <p>Modal</p>
+          <p>Data</p>
+        </Modal> */}
         <div className="songs">
           <ul>
-            <li onClick={() => this.showModal()}>song1</li>
+            <li>song1</li>
             <li>song2</li>
             <li>song3</li>
             <li>song4</li>
             <br />
           </ul>
-        </div>
-        <div className="selection-modal">
-          <div className="modal-content">
-            <p>You have voted! Wowwwwwwwwwwwwwwwwwwwwwwwwwww</p>
-            <span className="close">wow!</span>
-          </div>
         </div>
 
         <button onClick={() => this.getNowPlaying()}>check now playing</button>
