@@ -1,42 +1,178 @@
-.App {
+html, body, .stars {
+  height: 100%;
+  margin: 0;
+  background-color:rgba(33, 33, 33, 0.9);
+  color:#ffffff;
+  display:block;
+  font: 14px/1.3 Arial,sans-serif;
+  z-index:5;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 3.7rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+  animation: glow 1s ease-in-out infinite alternate;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+a {
+  text-decoration: none;
+  text-transform: uppercase;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.art {
+  border: 2px solid rgb(151, 151, 151);
+  max-width: 450px;
+  max-height: 150px;
+  margin: 0 auto;
+  outline: 1px solid white;
+}
+button {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background-color: gray;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  opacity: .8;
+}
+button:hover {
+  opacity: 1;
+  border: 1px solid rgb(163, 163, 163);
+  transition: .5s;
+}
+p {
+  margin-top: 30px;
+  margin-bottom: -2px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.title {
+  font-size: 25px;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: -10px;
+  text-shadow: 1px 1px gray, 2px 2px gray;
+  overflow: auto;
+}
+ul {
+  list-style: none;
+  display: inline;
+}
+li {
+  background-color: rgb(175, 175, 175);
+  color: white;
+  max-width: 450px;
+  margin: 15px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  opacity: .8;
+  padding: 10px 0;
+  font-size: 1rem;
+  overflow: auto;
+}
+li:focus {
+  background-color: rgb(2, 95, 2);
+  box-shadow: 0 0 10px white;
+  color: white;
+}
+li:hover {
+  cursor: pointer;
+  background-color: rgb(230, 206, 74);
+  color: black;
+  opacity: 1;
+  box-shadow: 0 0 10px white;
+  transition: .3s;
+}
+.songs {
+  margin-bottom: -20px;
+}
+.selection-modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  max-width: 450px;
+  overflow: auto;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
+@keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+.stars, .twinkling {
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+width:100%;
+height:100%;
+display:block;
+}
+
+.stars {
+background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+z-index:0;
+}
+
+.twinkling{
+background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+z-index:1;
+
+-moz-animation:move-twink-back 200s linear infinite;
+-ms-animation:move-twink-back 200s linear infinite;
+-o-animation:move-twink-back 200s linear infinite;
+-webkit-animation:move-twink-back 200s linear infinite;
+animation:move-twink-back 200s linear infinite;
+}
+
+@keyframes glow {
   from {
-    transform: rotate(0deg);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
   }
   to {
-    transform: rotate(360deg);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 60px #0073e6, 0 0 70px #0073e6;
   }
-}
-
-div, button {
-  margin: 15px;
 }
